@@ -1,7 +1,8 @@
 package com.example.workercontroller.ViewModl
 
-import com.example.workercontroller.ViewModl.WorkerViewModel.*
+import com.example.workercontroller.fragments.HealpData
 
 data class WorkerState(
-    val fragment: Fragments = Fragments.Register
+    val listHelpData: List<HealpData> = emptyList(),
+    val currentPositionPdf: String = ""
 )

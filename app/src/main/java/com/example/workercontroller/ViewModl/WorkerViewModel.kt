@@ -1,25 +1,34 @@
 package com.example.workercontroller.ViewModl
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+import com.example.workercontroller.fragments.HealpData
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
-class WorkerViewModel : ViewModel() {
-    private val _state = MutableStateFlow(WorkerState())
-    val state: StateFlow<WorkerState> = _state.asStateFlow()
 
-    fun updateTimeList(currentFragment: Fragments) {
-        _state.update { state ->
-            state.copy(fragment = currentFragment)
+class WorkerViewModel(application: Application) : AndroidViewModel(application) {
+
+    private val _uiState = MutableStateFlow(WorkerState())
+    val uiState: StateFlow<WorkerState> = _uiState.asStateFlow()
+
+    private val currentUiState
+        get() = uiState.value
+
+//    val assetManager = application.assets
+
+    fun updateHelpList(uiList: List<HealpData> ) {
+        _uiState.update { state ->
+            state.copy(listHelpData = uiList)
         }
     }
 
-    enum class Fragments {
-        Register,
-        AdminMenu
-
+    fun updatePdf(position: String ) {
+        _uiState.update { state ->
+            state.copy(currentPositionPdf = position)
+        }
     }
 
 }

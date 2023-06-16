@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/adminWindow"
-        android:name="com.example.workercontroller.fragments.RegisterAdminWindow"
+        android:name="com.example.workercontroller.fragments.MainScreen"
         android:label="fragment_admin_window"
         tools:layout="@layout/fragment_admin_window" >
         <action
@@ -17,7 +17,19 @@
 
     <fragment
         android:id="@+id/mainMenu"
-        android:name="com.example.workercontroller.fragments.AdminMenu"
+        android:name="com.example.workercontroller.fragments.OpeningShift"
         android:label="fragment_main_menu"
-        tools:layout="@layout/fragment_main_menu" />
+        tools:layout="@layout/fragment_open_shift" >
+        <action
+            android:id="@+id/action_mainMenu_to_adminWindow"
+            app:destination="@id/adminWindow" />
+        <action
+            android:id="@+id/action_mainMenu_to_pdfReader"
+            app:destination="@id/pdfReader" />
+    </fragment>
+    <fragment
+        android:id="@+id/pdfReader"
+        android:name="com.example.workercontroller.fragments.PdfReader"
+        android:label="fragment_pdf_reader"
+        tools:layout="@layout/fragment_pdf_reader" />
 </navigation>

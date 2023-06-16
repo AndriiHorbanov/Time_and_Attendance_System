@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.OpeningShift">
+
+    <TextView
+        android:id="@+id/title_work"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:text="@string/start_work"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/helpRecycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="24dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch_open_close"
+        tools:listitem="@layout/recyclerview_item" />
+
+    <Button
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Otworzyć zmiane"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Switch
+        android:id="@+id/switch_open_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:layout_marginTop="12dp"
+        android:text="Otwarcie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_work"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/close_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zamkniencie"
+        app:layout_constraintBottom_toBottomOf="@+id/switch_open_close"
+        app:layout_constraintStart_toEndOf="@+id/switch_open_close"
+        app:layout_constraintTop_toTopOf="@+id/switch_open_close" />
+
+
+    <!--    <CheckBox-->
+<!--        android:id="@+id/alarm"-->
+<!--        android:layout_marginTop="14dp"-->
+<!--        android:layout_marginStart="14dp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Rozbrojenie alermu"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/title_start_work"-->
+<!--        />-->
+
+<!--    <CheckBox-->
+<!--        android:id="@+id/swiatwo"-->
+<!--        android:layout_margin="14dp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Odpalić oświetlenie sali oraz ekspozycji"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/alarm"-->
+<!--        />-->
+
+<!--    <CheckBox-->
+<!--        android:id="@+id/komputer"-->
+<!--        android:layout_margin="14dp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Odpalić komputer"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/swiatwo"-->
+<!--        />-->
+
+<!--    <CheckBox-->
+<!--        android:id="@+id/odbicie"-->
+<!--        android:layout_margin="14dp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Odbicie w INEWI"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/komputer"-->
+<!--        />-->
+
+<!--    <CheckBox-->
+<!--        android:id="@+id/zadania"-->
+<!--        android:layout_margin="14dp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Wykonać zadania w aplikacji Gemini"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/odbicie"-->
+<!--        />-->
+
+<!--    <CheckBox-->
+<!--        android:id="@+id/vpn"-->
+<!--        android:layout_margin="14dp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Odpalić VPN"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/zadania"-->
+<!--        />-->
+
+<!--    <CheckBox-->
+<!--        android:id="@+id/inpos"-->
+<!--        android:layout_margin="14dp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Logowanie inpos"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/vpn"-->
+<!--        />-->
+
+<!--    <CheckBox-->
+<!--        android:id="@+id/kasa"-->
+<!--        android:layout_margin="14dp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Sprawdzić stan kasy i wpisać na liste kasową"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/inpos"-->
+<!--        />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/pytajnik"-->
+<!--        android:layout_width="42dp"-->
+<!--        android:layout_height="44dp"-->
+<!--        android:layout_margin="14dp"-->
+<!--        android:src="@drawable/baseline_help_24"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/close"-->
+<!--        -->
+<!--         />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/pomoc"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="12dp"-->
+<!--        android:text="materiały pomocniczę"-->
+<!--        app:layout_constraintStart_toEndOf="@id/pytajnik"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/pytajnik"-->
+<!--        app:layout_constraintTop_toTopOf="@id/pytajnik"-->
+<!--        />-->
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

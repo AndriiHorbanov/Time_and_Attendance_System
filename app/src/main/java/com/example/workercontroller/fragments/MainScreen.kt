@@ -11,7 +11,7 @@ import com.example.workercontroller.R
 import com.example.workercontroller.ViewModl.WorkerViewModel
 import com.example.workercontroller.databinding.FragmentAdminWindowBinding
 
-class RegisterAdminWindow : Fragment() {
+class MainScreen : Fragment() {
 
 
     private lateinit var binding: FragmentAdminWindowBinding
@@ -39,7 +39,6 @@ class RegisterAdminWindow : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.register.setOnClickListener {
-//            sharedViewModel.updateTimeList(true)
             it.findNavController().navigate(R.id.action_adminWindow_to_mainMenu)
 
         }
