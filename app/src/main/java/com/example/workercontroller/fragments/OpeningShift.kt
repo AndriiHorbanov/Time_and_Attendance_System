@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.workercontroller.R
+import com.example.workercontroller.ViewModl.HealpData
 import com.example.workercontroller.ViewModl.WorkerViewModel
 import com.example.workercontroller.databinding.FragmentOpenShiftBinding
 

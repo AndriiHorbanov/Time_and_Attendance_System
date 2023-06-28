@@ -6,7 +6,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.workercontroller.date.DataRepository
 import com.example.workercontroller.date.DatasDatabase
 import com.example.workercontroller.date.DatasEntity
-import com.example.workercontroller.fragments.HealpData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -15,7 +14,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 
-class WorkerViewModel(application: Application, repository: DataRepository) : AndroidViewModel(application) {
+class WorkerViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _uiState = MutableStateFlow(WorkerState())
     val uiState: StateFlow<WorkerState> = _uiState.asStateFlow()
@@ -23,12 +22,12 @@ class WorkerViewModel(application: Application, repository: DataRepository) : An
     private var count = 1
     private var lastInfo = DatasEntity()
 
-    private val repo = repository
+    val repository: DataRepository
 
     init {
         collectData()
-//        val dataDao = DatasDatabase.getDatabase(application).datasDao()
-//        repository = DataRepository(dataDao)
+        val dataDao = DatasDatabase.getDatabase(application).datasDao()
+        repository = DataRepository(dataDao)
     }
 
     private val currentUiState
@@ -54,7 +53,7 @@ class WorkerViewModel(application: Application, repository: DataRepository) : An
 
     fun collectData(){
         viewModelScope.launch {
-            repo.readAllData().collect{ list ->
+            repository.readAllData().collect{ list ->
                 count = list.size
                 updateTest(list)
             }
@@ -62,9 +61,13 @@ class WorkerViewModel(application: Application, repository: DataRepository) : An
     }
 
     fun updateTest(list: List<DatasEntity>){
+        var name = "" + "f"
+        list.map {
+            name = it.someDAta
+        }
         _uiState.update { state ->
             state.copy(
-                test = list.size.toString()
+                test = name
             )
         }
     }
@@ -72,7 +75,7 @@ class WorkerViewModel(application: Application, repository: DataRepository) : An
 
     fun addData(value: String){
         viewModelScope.launch(Dispatchers.IO){
-            repo.addDatas(lastInfo.copy(id = count, someDAta = value))
+            repository.addDatas(lastInfo.copy(id = count, someDAta = value))
         }
     }
 

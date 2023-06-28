@@ -9,6 +9,7 @@ import com.example.workercontroller.ViewModl.WorkerViewModel
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.workercontroller.R
+import com.example.workercontroller.ViewModl.HealpData
 
 
 class RecyclerAdapter(

@@ -19,7 +19,7 @@ class MainScreen : Fragment() {
 
 
     private lateinit var binding: FragmentAdminWindowBinding
-//    private val sharedViewModel: WorkerViewModel by activityViewModels()
+    private val sharedViewModel: WorkerViewModel by activityViewModels()
 
 
     override fun onResume() {
@@ -42,23 +42,23 @@ class MainScreen : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        observeState()
-//        binding.testButtonSet.setOnClickListener {
-//            sharedViewModel.addData(binding.testSetText.toString())
-//        }
+        observeState()
+        binding.testButtonSet.setOnClickListener {
+            sharedViewModel.addData(binding.testSetText.toString())
+        }
         binding.otwarcie.setOnClickListener {
             it.findNavController().navigate(R.id.action_adminWindow_to_mainMenu)
         }
 
     }
 
-//    private fun observeState() {
-//        lifecycleScope.launch {
-//            repeatOnLifecycle(Lifecycle.State.STARTED) {
-//                sharedViewModel.uiState.collect { state ->
-//                    binding.testTextData.text = state.test
-//                }
-//            }
-//        }
-//    }
+    private fun observeState() {
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                sharedViewModel.uiState.collect { state ->
+                    binding.testTextData.text = state.test
+                }
+            }
+        }
+    }
 }

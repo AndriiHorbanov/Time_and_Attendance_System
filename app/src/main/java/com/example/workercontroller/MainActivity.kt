@@ -8,7 +8,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import com.example.workercontroller.ViewModl.ViewModelFactory
 import com.example.workercontroller.ViewModl.WorkerViewModel
 import com.example.workercontroller.databinding.ActivityMainBinding
 import com.example.workercontroller.date.DataRepository
@@ -21,9 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
 
     private val sharedViewModel: WorkerViewModel by viewModels()
-    {
-        ViewModelFactory(application, DataRepository(DatasDatabase.getDatabase(application).datasDao()))
-    }
+
 
 
 
