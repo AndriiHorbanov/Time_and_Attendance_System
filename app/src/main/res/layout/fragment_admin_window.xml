@@ -8,7 +8,7 @@
 
 
     <Button
-        android:id="@+id/register"
+        android:id="@+id/otwarcie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
        android:layout_margin="34dp"
@@ -24,8 +24,36 @@
         android:layout_margin="34dp"
         android:text="@string/quiz"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/register"
+        app:layout_constraintStart_toEndOf="@+id/otwarcie"
         app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/test_set_text"
+        android:layout_margin="34dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otwarcie"
+        />
+
+    <TextView
+        android:id="@+id/test_text_data"
+        android:text="ffffffffffffffff"
+        android:layout_margin="34dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/test_set_text"
+        />
+
+    <Button
+        android:id="@+id/test_button_set"
+        android:layout_margin="34dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/test_text_data"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

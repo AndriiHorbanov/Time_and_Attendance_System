@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_adminWindow_to_mainMenu"
             app:destination="@id/mainMenu" />
+        <action
+            android:id="@+id/action_adminWindow_to_quiz2"
+            app:destination="@id/quiz2" />
     </fragment>
 
     <fragment
@@ -32,4 +35,9 @@
         android:name="com.example.workercontroller.fragments.PdfReader"
         android:label="fragment_pdf_reader"
         tools:layout="@layout/fragment_pdf_reader" />
+    <fragment
+        android:id="@+id/quiz2"
+        android:name="com.example.workercontroller.fragments.Quiz"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" />
 </navigation>

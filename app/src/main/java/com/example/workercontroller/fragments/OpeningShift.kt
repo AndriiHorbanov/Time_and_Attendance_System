@@ -40,6 +40,7 @@ class OpeningShift : Fragment() {
         setAdapter()
         updateAdapter()
 
+
 //        check()
     }
 
